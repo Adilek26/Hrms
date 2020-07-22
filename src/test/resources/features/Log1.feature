@@ -1,6 +1,6 @@
 #Author: adilek.26@gmail.com
-@sprint5 @login
-
+#@sprint5 @login
+#
  #@smoke
      #Scenario Outline:
      #When user enter valid "<UserName>" and "<Password>"
@@ -22,4 +22,3 @@
   #| Admin123 | Qwer123   | Invalid credentials       |
   #|          | admin123  | Username cannot be empty  |
   #| Admin    |           | Password cannot be empty  |
-  

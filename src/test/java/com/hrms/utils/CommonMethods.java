@@ -253,18 +253,24 @@ public class CommonMethods extends PageInitializer {
 	 * This method will take a screenshot
 	 * @param filename
 	 */
-	public static String takesScreenshot(String filename) {
+	public static byte[] takesScreenshot(String filename) {
 		TakesScreenshot ts=(TakesScreenshot) driver;//downcasting
-		File sourceFile=ts.getScreenshotAs(OutputType.FILE);
-		String destinationFile = Constants.SCREENSHOT_FILEPATH + filename + getTimeStemp() + ".png";
-		try {
-			FileUtils.copyFile(sourceFile, new File(destinationFile));
-		} catch (IOException e) {
-			System.out.println("Can not take screenshot!");
-		}
-		
-		return destinationFile;
-	}
+		//create picture in a form of bytes --> we need it to attach it to our scenario
+				byte[]picture=ts.getScreenshotAs(OutputType.BYTES);
+			
+				//taking a picture in a form of file and store it in the specified location
+				Date date = new Date();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MMdd_HHmmss");
+				String timeStamp = sdf.format(date.getTime());
+				File file = ts.getScreenshotAs(OutputType.FILE);
+				String scrshotFile = Constants.SCREENSHOT_FILEPATH + filename + timeStamp + ".png";
+				try {
+					FileUtils.copyFile(file, new File(scrshotFile));
+				} catch (IOException e) {
+					System.out.println("Cannot take a screenshot");
+				}
+				return picture;
+			}
 
 	public static String getTimeStemp() {
 		Date date = new Date();

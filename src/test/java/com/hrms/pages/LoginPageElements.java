@@ -1,6 +1,7 @@
 package com.hrms.pages;
 
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -48,24 +49,7 @@ public class LoginPageElements extends CommonMethods{
 	   sendText(password,ConfigsReader.getProperty("password"));
 	   click(loginBtn);
 		}
-	//
-	
-	
-	public void loginpar(String usrname, String pasword) {
-	    sendText(username,usrname);
-	   sendText(password,pasword);
-	   click(loginBtn);
-		}
-	
-	//setter
-	public void sendUsername(String uid) {
-		sendText(username, uid);
-	}
-	
-	//getter
-	public WebElement getUsername() {
-		return username;
-	}
+
 	
 	public void login(String uid, String pwd) {
 		sendText(username, uid);

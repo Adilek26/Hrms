@@ -20,8 +20,8 @@ public class EmployeeSearchSteps extends CommonMethods {
 	    jsClick(dashboard.empListPage);
 	}
 
-	@When("user enters valid employee id{string}")
-	public void user_enters_valid_employee_id(String empId) {
+	@When("user enters valid employee id {string}")
+	public void user_enters_valid_employee(String empId) {
 	   sendText(viewEmp.empID,empId);
 	}
 

@@ -18,6 +18,8 @@ monochrome = true
 ,tags= "@regression"
 ,plugin= {
 	"pretty",//prints gherkin steps in console
+	//"html:target/cucumber-default-report",//create basic html report in specified location
+	"json:target/cucumber.json",
 	"html:target/cucumber-default-report"//create basic html report in specified location
 	}
 )

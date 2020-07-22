@@ -15,7 +15,7 @@ glue="com/hrms/steps", //where we can find implementation code for gherkin steps
 		// if set to true no actual execution will happen
 monochrome = true
 ,strict=true
-,tags= "@smoke123"
+,tags= "@reporting"
 ,plugin= {
 	"pretty",//prints gherkin steps in console
 	"html:target/cucumber-default-report",//create basic html report in specified location
